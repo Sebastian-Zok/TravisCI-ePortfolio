@@ -6,9 +6,10 @@
 
 ## Tabel of Content
 
-1.  [Why](#introduction)
-2.  [What](#what)
-    1.  [Key Advantages of Travis-CI](#key-advantages)
+1.  [Introduction](#introduction)
+2.  [Continuous Integration](#continuous)
+3.  [Travis CI](#continuous)
+    1. [What is Travis CI?](#continuous)
 
 <a name="introduction"></a>
 
@@ -19,6 +20,8 @@ Testing your work and not wildly adding new functionality is an important aspect
 <img style='text-align: center' src="https://static.boredpanda.com/blog/wp-content/uploads/2021/01/home-interior-design-fails-22-5ff4266e4d4a8__700.jpg" alt="drawing" width="300"/>
 
 Testing is of course important but costs a lot of time and therefore money. Also for testing, a lot of repetitive tasks have to be done. For example, the code must be compiled, bundled and the tests must be executed. If you are working in a team and you can't be sure that the other developers are working correctly. That's why you have to test their commits after every new pull. This is where Continuous Integration comes into play and Travis as a CI provider.
+
+<a name="continuous"></a>
 
 ## Continuous Integration
 
@@ -33,11 +36,17 @@ Advantages:
 
 <img src="https://cloud.githubusercontent.com/assets/1128312/20186823/ddfdbb9e-a771-11e6-9e99-4720e7b60f53.png" alt="drawing" width="600"/>
 
+<a name="Travis"></a>
+
 ## Travis CI
+
+<a name="What"></a>
 
 #### What is Travis CI?
 
 Travis CI is a cloud hosted CI service that is itegrated with GitHub.
+
+<a name="Features"></a>
 
 #### Features
 
@@ -61,6 +70,8 @@ Con's:
 - No build pipelines
 - Debit Card for authentication required
 
+<a name="Getting"></a>
+
 # Getting Started
 
 1. Log in on travis-ci.com with your GitHub Account
@@ -81,6 +92,8 @@ Con's:
 6. Create a .travis.yaml in the root folder of your project. More informations are provided below
 
 7. Simply push your commit to start a build of your application via Travis CI
+
+<a name=".travis"></a>
 
 # .travis.yaml
 
@@ -182,9 +195,13 @@ notifications:
 
 You can also integrate tools like Coveralls, DeepSource and 3rd Party Apps. In order to enhance your software quality.
 
+<a name="About"></a>
+
 # About this example
 
 This is a very basic node.js project that uses [vows](http://vowsjs.org) as testing framework. In this project we just have a simple math function that is checked for correct output.
+
+<a name="Local"></a>
 
 ## Local Usage
 
@@ -205,10 +222,16 @@ node_js:
 cache: npm
 ```
 
-For more information have a look on [the documentation](http://about.travis-ci.org/) of Travis CI.
+<a name="Badges"></a>
 
 ## Badges
 
 Here is a status icon showing the state of this main branch:
 
 [![Build Status](https://app.travis-ci.com/Sebastian-Zok/TravisCI-ePortfolio.svg?token=qf9Qoz1exW1V6BM8uvXA&branch=main)](https://app.travis-ci.com/Sebastian-Zok/TravisCI-ePortfolio)
+
+<a name="Badges"></a>
+
+# More
+
+For more information have a look on [the documentation](http://about.travis-ci.org/) of Travis CI.
