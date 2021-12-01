@@ -43,7 +43,7 @@ Advantages:
 - Permanent availability of an working demo
 - Shorter check-in intervals are generally advantageous, as this reduces the amount of merging effort required.
 
-<img src="https://cloud.githubusercontent.com/assets/1128312/20186823/ddfdbb9e-a771-11e6-9e99-4720e7b60f53.png" alt="drawing" width="600"/>
+<img src="https://cloud.githubusercontent.com/assets/1128312/20186823/ddfdbb9e-a771-11e6-9e99-4720e7b60f53.png"/>
 
 <a name="Travis"></a>
 
@@ -92,15 +92,15 @@ Travis CI is also capable of deploying your code and notifying your team.
 1. Sign in on travis-ci.com (You can use your GitHub-Account)
 2. Authorize Travis CI
 
-<img src="https://user-images.githubusercontent.com/7784660/42060974-e6384036-7b28-11e8-9aa1-1535dabe0dee.jpg" alt="drawing" width="600"/>
+<img src="https://user-images.githubusercontent.com/7784660/42060974-e6384036-7b28-11e8-9aa1-1535dabe0dee.jpg"/>
 
 3. Activate GitHub Apps Integration
 
-<img src="https://user-images.githubusercontent.com/7784660/42061901-feb97028-7b2b-11e8-9ac5-75e32a181087.jpg" alt="drawing" width="600"/>
+<img src="https://user-images.githubusercontent.com/7784660/42061901-feb97028-7b2b-11e8-9ac5-75e32a181087.jpg"/>
 
 4. Install Travis CI on all repositories or only on selected ones
 
-<img src="https://user-images.githubusercontent.com/7784660/42060973-e61fe702-7b28-11e8-8e40-f99e26281750.jpg" alt="drawing" width="600"/>
+<img src="https://user-images.githubusercontent.com/7784660/42060973-e61fe702-7b28-11e8-8e40-f99e26281750.jpg"/>
 
 5. Now you need to select a plan. In order to prevent misuse, Travis CI will need your debit card information even for the free plan
 
