@@ -9,7 +9,7 @@
 1.  [Introduction](#introduction)
 2.  [Continuous Integration](#continuous)
 3.  [Travis CI](#Travis)
-    1. [What is Travis CI?](#continuous)
+    1. [What is Travis CI?](#What)
     2. [Features](#Features)
     3. [Disadvantages](#Disadvantages)
 4.  [Getting Started](#Getting)
