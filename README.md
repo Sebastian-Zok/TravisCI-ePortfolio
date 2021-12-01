@@ -59,7 +59,7 @@ In the picture below you can see a sample Travis CI worker. After a commit is pu
 
 Travis CI is also capable of deploying your code and notifying your team.
 
-<img src="./example.png" alt="drawing" />
+<img src="./example.PNG" alt="worker" />
 
 <a name="Features"></a>
 
