@@ -8,25 +8,34 @@
 
 1.  [Introduction](#introduction)
 2.  [Continuous Integration](#continuous)
-3.  [Travis CI](#continuous)
+3.  [Travis CI](#Travis)
     1. [What is Travis CI?](#continuous)
+    2. [Features](#Features)
+    3. [Disadvantages](#Disadvantages)
+4.  [Getting Started](#Getting)
+5.  [.travis.yaml](#.travis)
+6.  [About this example](#About)
+    1. [Local Usage](#Local)
+    2. [Badges](#Badges)
+7.  [More](#More)
 
 <a name="introduction"></a>
 
 ## Introduction
 
-Testing your work and not wildly adding new functionality is an important aspect of developing successful software. Otherwise, your software will end up in "integration hell" just like these design fails:
+Testing your work and not wildly adding new functionality is an important aspect of successfully developing software. Otherwise, you and your software will end up in "integration hell". And look just like these design fails,
+where the integration was not well thought out:
 
-<img style='text-align: center' src="https://static.boredpanda.com/blog/wp-content/uploads/2021/01/home-interior-design-fails-22-5ff4266e4d4a8__700.jpg" alt="drawing" width="300"/>
+<img style='text-align: center' src="https://static.boredpanda.com/blog/wp-content/uploads/2021/01/home-interior-design-fails-22-5ff4266e4d4a8__700.jpg" alt="drawing" width="350"/>
 
-Testing is of course important but costs a lot of time and therefore money. Also for testing, a lot of repetitive tasks have to be done. For example, the code must be compiled, bundled and the tests must be executed. If you are working in a team and you can't be sure that the other developers are working correctly. That's why you have to test their commits after every new pull. This is where Continuous Integration comes into play and Travis as a CI provider.
+Testing your software is essential but costs a lot of time and therefore money. A lot of repetitive tasks have to be done. For example, the code must be compiled, bundled and the tests must be executed. And if you are working in a team you can't rely on the other developers. Likely someone will eventually forget the testing before pushing their commit. That's why you would have to test after every single new pull. And this is where Travis CI as a Continuous Integration provider comes into play.
 
 <a name="continuous"></a>
 
 ## Continuous Integration
 
-Continuous integration (CI) describes the process of continuously merging components to form an application. The goal is to increase software quality, through early detection of errors. For this purpose, the software is built, automated tests are performed and software metrics are created to measure software quality (e.g. code coverage). This entire process is triggered automatically by checking into the version management system. After just a few minutes the developer receives feedback as to whether the quality requirements have been achieved or not.
-Continuous Delivery (CD) is a further development of CI. Here the software is delivered immediately to the customer.
+Continuous integration (CI) describes the process of continuously merging small components and features to form an application. The goal is to increase software quality, through early detection of errors. For this purpose every single commit the software is built, automated tests are performed and software metrics are created to measure software quality (e.g. code coverage). This entire process is triggered automatically by checking into the version management system. After just a few minutes the developer receives feedback as to whether the quality requirements have been achieved or not.
+Continuous Delivery (CD) is a further development of CI. Here the software will even be delivered immediately to the customer.
 
 Advantages:
 
@@ -42,20 +51,24 @@ Advantages:
 
 <a name="What"></a>
 
-#### What is Travis CI?
+### 1. What is Travis CI?
 
-Travis CI is a cloud hosted CI service that is itegrated with GitHub.
+Travis CI is a cloud hosted CI service that is useable with GitHub. It is easy to set up and free to use for public projects. About a million projects are already being verified with Travis CI and also in future Travics CI promises to remain free of charge.
+
+In the picture below you can see a sample Travis CI worker. After a commit is pushed to GitHub, Travis CI triggers a new build on their servers. The necessary dependencies are loaded and the software is built. After this, Travis CI executes some predefined tests. If the build passes: Hooray!
+
+Travis CI is also capable of deploying your code and notifying your team.
+
+<img src="./example.png" alt="drawing" />
 
 <a name="Features"></a>
 
-#### Features
-
-Pro's:
+### 2. Features
 
 - Open Source
 - Easy setup & configuration
 - Support for +21 languages
-- Deployment on multiple cloud services (AWS, Heroku)
+- Deployment on multiple cloud services (AWS, Heroku...)
 - Encrypted environment variables
 - Parallel builds on multiple platforms
 - Clean virtual machines after every build
@@ -63,7 +76,9 @@ Pro's:
 - Fast and reliable
 - Free to use for public GitHub projects
 
-Con's:
+<a name="Disadvantages"></a>
+
+### 3. Disadvantages:
 
 - No support for own infrastructure
 - No high security
@@ -74,7 +89,7 @@ Con's:
 
 # Getting Started
 
-1. Log in on travis-ci.com with your GitHub Account
+1. Sign in on travis-ci.com (You can use your GitHub-Account)
 2. Authorize Travis CI
 
 <img src="https://user-images.githubusercontent.com/7784660/42060974-e6384036-7b28-11e8-9aa1-1535dabe0dee.jpg" alt="drawing" width="600"/>
@@ -83,28 +98,27 @@ Con's:
 
 <img src="https://user-images.githubusercontent.com/7784660/42061901-feb97028-7b2b-11e8-9ac5-75e32a181087.jpg" alt="drawing" width="600"/>
 
-4. Install Travis CI on all repositories or only on selected
+4. Install Travis CI on all repositories or only on selected ones
 
 <img src="https://user-images.githubusercontent.com/7784660/42060973-e61fe702-7b28-11e8-8e40-f99e26281750.jpg" alt="drawing" width="600"/>
 
-5. Now you need to select a plan. In order to prevent misuse, Travis CI needs your debit card information even for the free plan
+5. Now you need to select a plan. In order to prevent misuse, Travis CI will need your debit card information even for the free plan
 
-6. Create a .travis.yaml in the root folder of your project. More informations are provided below
+6. Create a .travis.yaml in the root folder of your project. More information is provided below
 
-7. Simply push your commit to start a build of your application via Travis CI
+7. Now you simply push a commit to trigger a build and testing of your application via Travis CI
 
 <a name=".travis"></a>
 
 # .travis.yaml
 
-The .travis.yaml (or .yml) is the heart piece of our CI setup.
-Here we is mostly all of the configuration done.
+The .travis.yaml (or .yml) is the heart piece of your CI setup.
+This is where most of the configuration is done.
 
-We can select the language of the application:
+For example Travis CI needs to know the programming language of our application:
 
 ```yaml
 language: go
-language: node_js
 ```
 
 And the version:
@@ -115,7 +129,7 @@ node_js:
   - "4"
 ```
 
-Pick the os:
+Pick the operating system of your machine:
 
 ```yaml
 os: osx
@@ -139,7 +153,7 @@ before_script:
   - npm customTest
 ```
 
-Declare environment variables:
+Set environment variables:
 
 ```yaml
 env:
@@ -193,13 +207,13 @@ notifications:
     - sebastian@gmail.com
 ```
 
-You can also integrate tools like Coveralls, DeepSource and 3rd Party Apps. In order to enhance your software quality.
+In order to enhance your software quality, you can also integrate tools like [Coveralls](https://coveralls.io/), [DeepSource](https://deepsource.io/) and 3rd Party Apps.
 
 <a name="About"></a>
 
 # About this example
 
-This is a very basic node.js project that uses [vows](http://vowsjs.org) as testing framework. In this project we just have a simple math function that is checked for correct output.
+This is a very basic node.js project that uses [vows](http://vowsjs.org) as testing framework. In this project we just have a small function that is checked for correct output.
 
 <a name="Local"></a>
 
@@ -226,7 +240,7 @@ cache: npm
 
 ## Badges
 
-Here is a status icon showing the state of this main branch:
+Here is a status icon showing the state of this main branch. This badge is provided by Travis CI and as you can see, the build is passing:
 
 [![Build Status](https://app.travis-ci.com/Sebastian-Zok/TravisCI-ePortfolio.svg?token=qf9Qoz1exW1V6BM8uvXA&branch=main)](https://app.travis-ci.com/Sebastian-Zok/TravisCI-ePortfolio)
 
